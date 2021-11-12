@@ -32,17 +32,8 @@ import CommentsArea from "./CommentsArea";
         </Card>
 
         {this.state.selectedBook && (
-          <CommentsArea
-            id={this.props.selectedBook.asin}
-            selectedBook={this.state.selectedBook}
-          />
+          <CommentsArea selectedBook={this.state.selectedBook} />
         )}
-        {/* 
-        <Row className="mt-3 justify-content-center">
-          <Col xs={12} md={6} className="text-center">
-            <CommentsArea selectedBook={this.state.selectedBook} />
-          </Col>
-        </Row> */}
       </>
     );
   }

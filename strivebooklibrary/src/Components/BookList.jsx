@@ -1,10 +1,10 @@
 import SingleBookCard from "./SingleBook";
+
 import { Col, Container, Row, Form } from "react-bootstrap";
 import React from "react";
 class BookList extends React.Component {
   state = {
     searchQuery: "",
-    
   };
   render() {
     return (

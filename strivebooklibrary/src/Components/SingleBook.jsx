@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import CommentsArea from "./CommentsArea";
 
 /* import CommentsArea from ".Component/CommentsArea";
@@ -32,7 +32,7 @@ import CommentsArea from "./CommentsArea";
         </Card>
 
         {this.state.selectedBook && (
-          <CommentsArea selectedBook={this.state.selectedBook} />
+          <CommentsArea asin={this.props.book.asin} />
         )}
       </>
     );

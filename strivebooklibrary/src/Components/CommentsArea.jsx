@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { Component } from "react";
-import { ListGroup } from "react-bootstrap";
-
+import CommentList from "./CommentList";
+import AddComment from "./AddComment";
 class CommentsArea extends Component {
   state = {
     comments: [],
@@ -14,7 +14,8 @@ class CommentsArea extends Component {
   fetchComments = async () => {
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/comments",
+        "https://striveschool-api.herokuapp.com/api/comments/" +
+          this.props.asin,
         {
           method: "GET",
           headers: {
@@ -36,11 +37,15 @@ class CommentsArea extends Component {
   };
   render() {
     return (
-      <ListGroup>
+      /*     <ListGroup>
         {this.state.comments.map((c) => (
           <ListGroup.Item key={c.elementId}>{c.comment}</ListGroup.Item>
         ))}
-      </ListGroup>
+      </ListGroup> */
+      <div>
+        <AddComment asin={this.props.asin} />
+        <CommentList commentsToShow={this.state.comments} />
+      </div>
     );
   }
 }

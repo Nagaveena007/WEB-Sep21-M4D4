@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Navigation brand="Strive-Books" />
       <JumbotronElement />
-      <SingleBookCard book={horrorMovies[0]} />
+      {/*  <SingleBookCard book={horrorMovies[0]} /> */}
       <BookList books={horrorMovies} />
       <Footer />
     </div>
